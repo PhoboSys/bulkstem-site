@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BulkStem — voyage fuel and cargo planning for bulk carriers</title>
+<meta name="description" content="BulkStem: fuel ROB after every event, the critical fuel at the loading port and the maximum cargo intake to the load line. Native Mac app for Masters and Chief Officers. Works offline.">
+<style>
+  :root{--bg:#f6f5f1;--fg:#15213b;--muted:#5d667a;--line:#d8dbe3;--card:#fff;--accent:#0d3b7a}
+  @media (prefers-color-scheme:dark){:root{--bg:#0f1522;--fg:#e7ebf4;--muted:#9ba6bb;--line:#2a3447;--card:#161e2f;--accent:#7fb0ff}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif}
+  main{max-width:1040px;margin:0 auto;padding:48px 20px 80px}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:40px}
+  header img{width:56px;height:56px;border-radius:14px}
+  header strong{font-size:22px}
+  header span{color:var(--muted);font-size:15px}
+  h1{font-size:40px;line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+  .lead{font-size:20px;color:var(--muted);max-width:60ch;margin:0 0 28px}
+  .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:12px}
+  .cta[aria-disabled="true"]{opacity:.55;pointer-events:none}
+  .req{color:var(--muted);font-size:14px;margin:12px 0 48px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:0 0 48px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  figure{margin:0 0 28px}
+  figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:14px;display:block}
+  figcaption{color:var(--muted);font-size:14px;margin-top:8px}
+  footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:20px;margin-top:40px}
+  @media (max-width:600px){h1{font-size:30px}.lead{font-size:17px}}
+</style>
+</head>
+<body>
+<main>
+  <header><img src="img/icon.png" alt=""><div><strong>BulkStem</strong><br><span>for Masters and Chief Officers of bulk carriers</span></div></header>
+
+  <h1>Plan the voyage. Know the fuel. Load to the mark.</h1>
+  <p class="lead">Fuel on board after every event of the voyage, the critical ROB at the loading port and the maximum cargo you can take to the load line — in one native Mac app that works at sea without internet.</p>
+  <a class="cta" href="#download" aria-disabled="true">Download for Mac — coming soon</a>
+  <p class="req">Pilot in testing with working Masters. macOS 26 or newer. Signed release and automatic updates follow the pilot.</p>
+
+  <section class="grid">
+    <div class="card"><h3>Voyage sequence</h3><p>Sailing legs, port stays, cargo operations and bunkering with consumption profiles per leg, ship time with zone changes, ETA at every point.</p></div>
+    <div class="card"><h3>Critical ROB</h3><p>Fuel at arrival, after cargo and at departure of every cargo port, checked against your reserves per grade.</p></div>
+    <div class="card"><h3>Maximum cargo</h3><p>Draft limits in metres or feet at any density, departure and arrival points, stowage factor and contract tolerance — the lowest cap governs, with the full deadweight breakdown.</p></div>
+    <div class="card"><h3>Office-ready report</h3><p>The bunker calculation in the format operators ask for: distances, speeds, port stays, margins, ROB at every point. Copy as text or export PDF.</p></div>
+  </section>
+
+  <figure><img src="img/plan.png" alt="BulkStem voyage plan"><figcaption>Voyage plan: events, times in ship time, ROB per grade, critical points and the summary bar.</figcaption></figure>
+  <figure><img src="img/cargo.png" alt="BulkStem cargo intake"><figcaption>Cargo intake: limiting points, the governing cap and the deadweight breakdown.</figcaption></figure>
+  <figure><img src="img/reports.png" alt="BulkStem bunker calculation report"><figcaption>The bunker calculation report, ready to paste into an e-mail to the office.</figcaption></figure>
+
+  <footer>
+    <p>BulkStem is a planning and decision-support tool. It is not an approved loading instrument or stability instrument and not a navigation system. Cargo, draft, stability and strength figures must be verified on the vessel's approved loading computer before use. The Master retains sole responsibility for all operational decisions.</p>
+    <p>© 2026 PhoboSys</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>BulkStem updates</title>
+    <link>https://bulkstem.com/updates/appcast.xml</link>
+    <description>Signed BulkStem releases for macOS. Entries are added by the release pipeline.</description>
+    <language>en</language>
+  </channel>
+</rss>

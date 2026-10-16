@@ -2,59 +2,272 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BulkStem — voyage fuel and cargo planning for bulk carriers</title>
-<meta name="description" content="BulkStem: fuel ROB after every event, the critical fuel at the loading port and the maximum cargo intake to the load line. Native Mac app for Masters and Chief Officers. Works offline.">
-<style>
-  :root{--bg:#f6f5f1;--fg:#15213b;--muted:#5d667a;--line:#d8dbe3;--card:#fff;--accent:#0d3b7a}
-  @media (prefers-color-scheme:dark){:root{--bg:#0f1522;--fg:#e7ebf4;--muted:#9ba6bb;--line:#2a3447;--card:#161e2f;--accent:#7fb0ff}}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif}
-  main{max-width:1040px;margin:0 auto;padding:48px 20px 80px}
-  header{display:flex;align-items:center;gap:16px;margin-bottom:40px}
-  header img{width:56px;height:56px;border-radius:14px}
-  header strong{font-size:22px}
-  header span{color:var(--muted);font-size:15px}
-  h1{font-size:40px;line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
-  .lead{font-size:20px;color:var(--muted);max-width:60ch;margin:0 0 28px}
-  .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:12px}
-  .cta[aria-disabled="true"]{opacity:.55;pointer-events:none}
-  .req{color:var(--muted);font-size:14px;margin:12px 0 48px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:0 0 48px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-  .card h3{margin:0 0 6px;font-size:17px}
-  .card p{margin:0;color:var(--muted);font-size:15px}
-  figure{margin:0 0 28px}
-  figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:14px;display:block}
-  figcaption{color:var(--muted);font-size:14px;margin-top:8px}
-  footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:20px;margin-top:40px}
-  @media (max-width:600px){h1{font-size:30px}.lead{font-size:17px}}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BulkStem — voyage fuel and cargo planning for bulk-carrier officers</title>
+<meta name="description" content="BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.">
+<link rel="canonical" href="https://bulkstem.com/">
+<link rel="icon" type="image/svg+xml" href="img/icon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BulkStem — voyage fuel and cargo planning for bulk-carrier officers">
+<meta property="og:description" content="BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.">
+<meta property="og:url" content="https://bulkstem.com/">
+<meta property="og:image" content="https://bulkstem.com/img/screenshot-plan.png">
+<meta property="og:image:width" content="2200">
+<meta property="og:image:height" content="1464">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BulkStem — voyage fuel and cargo planning for bulk-carrier officers">
+<meta name="twitter:description" content="BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.">
+<meta name="twitter:image" content="https://bulkstem.com/img/screenshot-plan.png">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/site.js" defer></script>
 </head>
 <body>
-<main>
-  <header><img src="img/icon.png" alt=""><div><strong>BulkStem</strong><br><span>for Masters and Chief Officers of bulk carriers</span></div></header>
+<!-- Constants replaced by the release pipeline: DOWNLOAD_URL, RELEASE_NOTES_URL, CONTACT_EMAIL — see README.md -->
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <h1>Plan the voyage. Know the fuel. Load to the mark.</h1>
-  <p class="lead">Fuel on board after every event of the voyage, the critical ROB at the loading port and the maximum cargo you can take to the load line — in one native Mac app that works at sea without internet.</p>
-  <a class="cta" href="#download" aria-disabled="true">Download for Mac — coming soon</a>
-  <p class="req">Pilot in testing with working Masters. macOS 26 or newer. Signed release and automatic updates follow the pilot.</p>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#overview"><img src="img/icon.svg" alt="" width="22" height="22">BulkStem</a>
+    <nav class="site-nav" aria-label="Sections">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#calculates">What it calculates</a></li>
+        <li><a href="#trust">Trust</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="button" href="DOWNLOAD_URL">Download for Mac</a>
+  </div>
+</header>
 
-  <section class="grid">
-    <div class="card"><h3>Voyage sequence</h3><p>Sailing legs, port stays, cargo operations and bunkering with consumption profiles per leg, ship time with zone changes, ETA at every point.</p></div>
-    <div class="card"><h3>Critical ROB</h3><p>Fuel at arrival, after cargo and at departure of every cargo port, checked against your reserves per grade.</p></div>
-    <div class="card"><h3>Maximum cargo</h3><p>Draft limits in metres or feet at any density, departure and arrival points, stowage factor and contract tolerance — the lowest cap governs, with the full deadweight breakdown.</p></div>
-    <div class="card"><h3>Office-ready report</h3><p>The bunker calculation in the format operators ask for: distances, speeds, port stays, margins, ROB at every point. Copy as text or export PDF.</p></div>
+<main id="main">
+
+  <section class="hero" id="overview" aria-labelledby="hero-title">
+    <div class="container">
+      <p class="kicker">For Masters and Chief Officers of bulk carriers</p>
+      <h1 id="hero-title">Voyage fuel and cargo figures you can defend.</h1>
+      <div class="hero-row">
+        <p class="lead">BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.</p>
+        <div class="hero-actions">
+          <a class="button" href="DOWNLOAD_URL">Download for Mac</a>
+          <a class="text-link" href="#how">See how it works →</a>
+          <p class="small">macOS 26 or later · Free during the pilot · No account, no internet required</p>
+        </div>
+      </div>
+      <figure class="window-frame">
+        <img src="img/screenshot-plan.png" width="2200" height="1464" fetchpriority="high" alt="BulkStem voyage plan window: the event sequence with ROB per fuel grade after each event and the critical points at the cargo ports">
+      </figure>
+    </div>
   </section>
 
-  <figure><img src="img/plan.png" alt="BulkStem voyage plan"><figcaption>Voyage plan: events, times in ship time, ROB per grade, critical points and the summary bar.</figcaption></figure>
-  <figure><img src="img/cargo.png" alt="BulkStem cargo intake"><figcaption>Cargo intake: limiting points, the governing cap and the deadweight breakdown.</figcaption></figure>
-  <figure><img src="img/reports.png" alt="BulkStem bunker calculation report"><figcaption>The bunker calculation report, ready to paste into an e-mail to the office.</figcaption></figure>
+  <section class="figures" aria-labelledby="figures-title">
+    <div class="container reveal">
+      <h2 class="kicker" id="figures-title">Example — Panamax coal voyage (not operational data)</h2>
+      <div class="figures-grid">
+        <div class="figure-pair">
+          <p><span class="figure-label">Distance</span><span class="figure-value">4&nbsp;950<span class="unit">nm</span></span></p>
+          <p><span class="figure-label">Voyage time</span><span class="figure-value">23.80<span class="unit">days</span></span></p>
+        </div>
+        <table class="rob-table">
+          <caption>Final ROB, mt</caption>
+          <thead>
+            <tr><th scope="col">Grade</th><th scope="col">ROB</th><th scope="col">Reserve</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">HSFO</th><td>1&nbsp;037.7</td><td class="reserve">150.0</td></tr>
+            <tr><th scope="row">VLSFO</th><td>300.0</td><td class="reserve">50.0</td></tr>
+            <tr><th scope="row">LSMGO</th><td>187.5</td><td class="reserve">30.0</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <p><span class="figure-label">Maximum cargo</span><span class="figure-value figure-value--xl">69&nbsp;128.3<span class="unit">mt</span></span></p>
+          <p class="figure-note">Governed by departure Ust-Luga 14.60 m, capped at summer draft 14.45 m.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>BulkStem is a planning and decision-support tool. It is not an approved loading instrument or stability instrument and not a navigation system. Cargo, draft, stability and strength figures must be verified on the vessel's approved loading computer before use. The Master retains sole responsibility for all operational decisions.</p>
-    <p>© 2026 PhoboSys</p>
-  </footer>
+  <section class="section" id="reports" aria-labelledby="reports-title">
+    <div class="container">
+      <div class="split reveal">
+        <div>
+          <p class="kicker">Reports</p>
+          <h2 class="section-title" id="reports-title">The report your office asks for.</h2>
+        </div>
+        <div class="split-body">
+          <p class="text-lg">Every tonne of fuel on board at the loading port is a tonne of cargo you cannot load, and every tonne below the reserve is a risk you carry. The figures have to be right before the office asks for them.</p>
+          <p class="text-lg">Operators and charterers ask for a full bunker calculation — distances, speeds, port durations and reserves stated — and the cargo figures with arrival and departure drafts and the deadweight breakdown. BulkStem produces that report from the same figures you see on screen, as an A4 PDF or as plain text for an e-mail.</p>
+        </div>
+      </div>
+      <figure class="window-frame reveal">
+        <img src="img/screenshot-report.png" width="2200" height="1464" loading="lazy" decoding="async" alt="BulkStem A4 PDF report: the bunker calculation with the voyage sequence, bunkers received, totals and critical points">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section navy" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <h2 class="section-title reveal" id="how-title">How it works</h2>
+      <ol class="steps reveal">
+        <li class="step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <h3>Enter the vessel once.</h3>
+          <p>Fuel grades, consumption profiles by condition and speed (ballast, laden, in port; charter-party or slow-steaming speed), safety reserves, tank capacities and the hydrostatic table live in a vessel passport that every voyage reuses.</p>
+        </li>
+        <li class="step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <h3>Build the voyage as events.</h3>
+          <p>Sailing legs with distance and profile, port activities with duration, cargo operations, bunkering with the quantity received — in the order they happen, with the ship's clock and UTC side by side.</p>
+        </li>
+        <li class="step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <h3>Read the figures, then the report.</h3>
+          <p>Hours, ETA and ROB per grade after every event, the reserve status of each row, the critical ROB at the loading port and the maximum cargo intake at each limiting point. Export the office-ready report as PDF or text.</p>
+        </li>
+      </ol>
+      <figure class="window-frame window-frame--dark reveal">
+        <img src="img/screenshot-cargo-dark.png" width="2200" height="1464" loading="lazy" decoding="async" alt="BulkStem cargo intake window: the maximum cargo at the limiting draft with the deadweight breakdown">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="calculates" aria-labelledby="calculates-title">
+    <div class="container split">
+      <h2 class="section-title calc-title" id="calculates-title">What it calculates</h2>
+      <dl class="calc-list reveal">
+        <div class="calc-item">
+          <dt>ROB after every event</dt>
+          <dd>Consumption per fuel grade from the profile's daily rate and the event's hours; bunkers credited at the start of bunkering; reserves checked per grade on every row.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Critical ROB at the loading port</dt>
+          <dd>The fuel on board at departure from the loading port, after all port events and any bunkering there, which decides how much cargo you can lift.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Maximum cargo intake</dt>
+          <dd>Displacement at the limiting draft from your vessel's hydrostatic table, corrected for water density, minus lightship, constants, ballast, fresh water, lube oil and fuel on board — at the departure or arrival points you specify, in metres or feet.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Reserves, checked and stated</dt>
+          <dd>Your safety reserve per fuel grade, from the vessel passport, is checked on every event: the plan shows the status of each row and the report marks every figure below the reserve.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Several caps side by side</dt>
+          <dd>Draft, contract quantity with tolerance (for example 10 % MOLOO) and stowage factor: the lowest governs, and the report shows all of them.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Voyage variants</dt>
+          <dd>Keep named variants of a voyage inside one file and switch between them.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Office-ready reports</dt>
+          <dd>An A4 PDF and a plain-text version that pastes into an e-mail: the voyage sequence with distances, speeds, hours and consumption per grade, bunkers received, totals, critical points, the cargo intake with its deadweight breakdown, assumptions and issues — times in ship's time and UTC.</dd>
+        </div>
+        <div class="calc-item">
+          <dt>Ship time and UTC together</dt>
+          <dd>Every event carries the ship's clock offset; clock changes are set on the event where they happen; nothing shifts silently with the computer's time zone.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="principles" aria-label="Principles">
+    <div class="container principles-grid reveal">
+      <p class="principle"><strong>Works fully offline.</strong> No calculation, file or report depends on the network, and no data leaves your Mac.</p>
+      <p class="principle"><strong>No invented numbers.</strong> There are no default consumptions, no guessed distances and no silent zeros: missing or invalid input is flagged, never assumed.</p>
+      <p class="principle"><strong>Show the formula.</strong> The calculation engine is versioned, every formula is documented and tested, and the engine version is printed on every report and saved in every voyage file.</p>
+    </div>
+  </section>
+
+  <section class="section trust" id="trust" aria-labelledby="trust-title">
+    <div class="container">
+      <div class="narrow reveal">
+        <p class="kicker">Trust</p>
+        <h2 class="section-title" id="trust-title">What BulkStem is, and what it is not.</h2>
+        <p class="text-lg">BulkStem is a planning and decision-support tool. It is not an approved loading instrument or stability instrument (SOLAS XII/11, IACS UR L5) and not a navigation system. Cargo, draft, stability and strength figures must be verified on the vessel's approved loading computer and stability booklet before use. The Master retains sole responsibility for all operational decisions.</p>
+        <p class="trust-sub">Built with an active bulk-carrier Master from his own specification and voyage practice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="narrow reveal">
+        <h2 class="section-title" id="faq-title">Frequently asked questions</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Does it need an internet connection?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>No. BulkStem works fully offline. The only network use is checking for application updates, which you can trigger yourself.</p>
+          </details>
+          <details>
+            <summary>Which computers does it run on?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>A Mac with macOS 26 or later today. A Windows version is planned next, then iPad and iPhone; a browser version for ship PCs is under evaluation.</p>
+          </details>
+          <details>
+            <summary>My Mac runs an older macOS.<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>BulkStem needs macOS 26 or later. Every Mac with Apple silicon (2020 onward) and the last Intel models — the 16-inch MacBook Pro (2019), the four-port 13-inch MacBook Pro (2020), the iMac (2020) and the Mac Pro (2019) — can update to it free of charge. For older computers and for ship PCs, a browser version is planned.</p>
+          </details>
+          <details>
+            <summary>Can I share a voyage with the office or the relieving Master?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Yes. Send the voyage file — it is self-contained and opens with the same figures on any Mac running BulkStem — or send the PDF or the text report.</p>
+          </details>
+          <details>
+            <summary>Which fuel grades does it handle?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>The grades you define in the vessel passport, typically HFO, VLSFO and LSMGO. Every consumption profile has a daily rate per grade, and every ROB, reserve and critical point is shown per grade.</p>
+          </details>
+          <details>
+            <summary>Where is my data stored?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>In voyage files on your Mac. A voyage file is self-contained — it carries a copy of the vessel data — so it opens with the same figures on any other Mac running BulkStem.</p>
+          </details>
+          <details>
+            <summary>Can I open my Voyage Fuel Planner v4.8 files?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Yes. Projects and condition files are imported, and BulkStem reports what the old format did not store.</p>
+          </details>
+          <details>
+            <summary>Is it an approved loading instrument?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>No. It is a planning tool: the approved loading computer remains the authority for cargo, draft, stability and strength, and ECDIS for navigation.</p>
+          </details>
+          <details>
+            <summary>What does it cost?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Free during the pilot.</p>
+          </details>
+          <details>
+            <summary>Who makes it?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>PhoboSys, with the Master who wrote the original specification. Contact: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a>.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section download" id="download" aria-labelledby="download-title">
+    <div class="container reveal">
+      <h2 class="download-title" id="download-title">Download BulkStem for Mac</h2>
+      <p class="lead">macOS 26 or later. Signed and notarized. Updates arrive inside the application.</p>
+      <a class="button" href="DOWNLOAD_URL">Download for Mac</a>
+      <p class="small">Version and release notes: <a href="RELEASE_NOTES_URL">RELEASE_NOTES_URL</a></p>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-row">
+      <a class="brand" href="#overview"><img src="img/icon.svg" alt="" width="22" height="22">BulkStem</a>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="RELEASE_NOTES_URL">Release notes</a></li>
+        <li><a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></li>
+      </ul>
+    </div>
+    <hr class="footer-rule">
+    <p class="disclaimer">BulkStem is a planning and decision-support tool. It is not an approved loading instrument or stability instrument (SOLAS XII/11, IACS UR L5) and not a navigation system. Cargo, draft, stability and strength figures must be verified on the vessel's approved loading computer and stability booklet before use. The Master retains sole responsibility for all operational decisions.</p>
+    <p class="copyright">© PhoboSys</p>
+  </div>
+</footer>
 </body>
 </html>

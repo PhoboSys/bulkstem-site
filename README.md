@@ -67,3 +67,7 @@ python3 -m http.server 8080
 ```
 
 Then open http://localhost:8080/ (and `/privacy.html`). Stop the server with Ctrl-C.
+
+## Open Graph card and icons
+
+`img/og.png` (1200 × 630) is rendered from `design/og-card.html` with headless Chrome: `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --user-data-dir=/tmp/og --window-size=1200,630 --force-device-scale-factor=2 --hide-scrollbars --screenshot=og-2x.png file://$PWD/design/og-card.html`, then `sips -z 630 1200 og-2x.png --out img/og.png`. Regenerate it when the headline or the hero screenshot changes. `img/favicon-32.png` and `img/apple-touch-icon.png` come from the app icon set (`apps/apple/Packaging/icon/AppIcon.iconset` in the BulkStem repository); replace them with the final mark after the logo decision. The JSON-LD block in `index.html` (SoftwareApplication) carries the pilot offer "Free during the pilot" — update it together with the pricing line.

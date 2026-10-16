@@ -7,17 +7,23 @@
 <meta name="description" content="BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.">
 <link rel="canonical" href="https://bulkstem.com/">
 <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#FAFCFD">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BulkStem — voyage fuel and cargo planning for bulk-carrier officers">
 <meta property="og:description" content="BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.">
 <meta property="og:url" content="https://bulkstem.com/">
-<meta property="og:image" content="https://bulkstem.com/img/screenshot-plan.png">
-<meta property="og:image:width" content="2200">
-<meta property="og:image:height" content="1464">
+<meta property="og:image" content="https://bulkstem.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BulkStem — voyage fuel and cargo planning for bulk-carrier officers">
 <meta name="twitter:description" content="BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.">
-<meta name="twitter:image" content="https://bulkstem.com/img/screenshot-plan.png">
+<meta name="twitter:image" content="https://bulkstem.com/img/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BulkStem","applicationCategory":"BusinessApplication","operatingSystem":"macOS 26 or later","url":"https://bulkstem.com/","image":"https://bulkstem.com/img/og.png","description":"BulkStem turns a voyage into an event sequence — sailing, port time, cargo operations, bunkering — and calculates fuel ROB after every event, the critical ROB at the loading port and the maximum cargo intake from your vessel's own hydrostatics: every variable of the voyage in one calculation, ready for the office. Offline and deterministic, with documented, versioned formulas.","publisher":{"@type":"Organization","name":"PhoboSys"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free during the pilot"}}
+</script>
 <link rel="preload" href="assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -208,8 +214,16 @@
             <p>A Mac with macOS 26 or later today. A Windows version is planned next, then iPad and iPhone; a browser version for ship PCs is under evaluation.</p>
           </details>
           <details>
-            <summary>My Mac runs an older macOS.<span class="faq-icon" aria-hidden="true">+</span></summary>
-            <p>BulkStem needs macOS 26 or later. Every Mac with Apple silicon (2020 onward) and the last Intel models — the 16-inch MacBook Pro (2019), the four-port 13-inch MacBook Pro (2020), the iMac (2020) and the Mac Pro (2019) — can update to it free of charge. For older computers and for ship PCs, a browser version is planned.</p>
+            <summary>Is it an approved loading instrument?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>No. It is a planning tool: the approved loading computer remains the authority for cargo, draft, stability and strength, and ECDIS for navigation.</p>
+          </details>
+          <details>
+            <summary>Where is my data stored?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>In voyage files on your Mac. A voyage file is self-contained — it carries a copy of the vessel data — so it opens with the same figures on any other Mac running BulkStem.</p>
+          </details>
+          <details>
+            <summary>What does it cost?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Free during the pilot. Pricing will be announced before the public release.</p>
           </details>
           <details>
             <summary>Can I share a voyage with the office or the relieving Master?<span class="faq-icon" aria-hidden="true">+</span></summary>
@@ -220,20 +234,12 @@
             <p>The grades you define in the vessel passport, typically HFO, VLSFO and LSMGO. Every consumption profile has a daily rate per grade, and every ROB, reserve and critical point is shown per grade.</p>
           </details>
           <details>
-            <summary>Where is my data stored?<span class="faq-icon" aria-hidden="true">+</span></summary>
-            <p>In voyage files on your Mac. A voyage file is self-contained — it carries a copy of the vessel data — so it opens with the same figures on any other Mac running BulkStem.</p>
+            <summary>My Mac runs an older macOS.<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>BulkStem needs macOS 26 or later. Every Mac with Apple silicon (2020 onward) and the last Intel models — the 16-inch MacBook Pro (2019), the four-port 13-inch MacBook Pro (2020), the iMac (2020) and the Mac Pro (2019) — can update to it free of charge. For older computers and for ship PCs, a browser version is planned.</p>
           </details>
           <details>
             <summary>Can I open my Voyage Fuel Planner v4.8 files?<span class="faq-icon" aria-hidden="true">+</span></summary>
             <p>Yes. Projects and condition files are imported, and BulkStem reports what the old format did not store.</p>
-          </details>
-          <details>
-            <summary>Is it an approved loading instrument?<span class="faq-icon" aria-hidden="true">+</span></summary>
-            <p>No. It is a planning tool: the approved loading computer remains the authority for cargo, draft, stability and strength, and ECDIS for navigation.</p>
-          </details>
-          <details>
-            <summary>What does it cost?<span class="faq-icon" aria-hidden="true">+</span></summary>
-            <p>Free during the pilot. Pricing will be announced before the public release.</p>
           </details>
           <details>
             <summary>Who makes it?<span class="faq-icon" aria-hidden="true">+</span></summary>
